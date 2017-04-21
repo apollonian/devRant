@@ -3,7 +3,7 @@
 
 # devRant on _Amazon Alexa_
 > The Unofficial devRant Alexa Skill.</br>
-Enjoy(and relate to) the commnunity's top rants.
+Enjoy(and relate to) the community's top rants.
 
 [![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](https://github.com/apollonian11/devRant/blob/master/LICENSE.md)
 
