@@ -1,5 +1,6 @@
-<img src="https://github.com/apollonian11/devRant/raw/master/assets/APP_ICON_LARGE.png" align="left" width="160px" height="160px"/>
-<img align="left" width="0" height="160px" hspace="10"/>
+<!--Thanks Meadowcottage for the README template -->
+<img src="https://github.com/apollonian11/devRant/raw/master/assets/APP_ICON_LARGE.png" align="left" width="172px" height="172px"/>
+<img align="left" width="0" height="172px" hspace="10"/>
 
 # devRant on _Amazon Alexa_
 > The Unofficial devRant Alexa Skill.</br>
