@@ -1,0 +1,27 @@
+{
+  "name": "devrant-alexa",
+  "version": "0.0.1",
+  "description": "Unofficial devRant Alexa Skill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apollonian11/devRant.git"
+  },
+  "keywords": [
+    "alexa",
+    "devrant"
+  ],
+  "author": "Abhishek Warokar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apollonian11/devRant/issues"
+  },
+  "homepage": "https://github.com/apollonian11/devRant#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.9",
+    "rantscript": "^1.1.0"
+  }
+}
