@@ -9,6 +9,7 @@ const HELP_REPROMPT = 'What can I help you with?';
 const UNHANDLED_MESSAGE = 'Sorry, I didn\'t get that. Try saying it again';
 const UNHANDLED_REPROMPT = 'Try saying it again.';
 const STOP_MESSAGE = 'Goodbye!';
+const ERROR_MESSAGE = 'Oops, Error 418 ... Try again'
 
 let getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -23,21 +24,18 @@ const handlers = {
   },
   'GetRant': function () {
     devRant
-      .rants('top', 1, getRandomInt(8, 2048))
+      .rants('top', 24, getRandomInt(4, 2048))
       .then((rants) => {
-        rant = rants[0];
+        let rant = rants[0];
+        if (rant.attached_image != '') {
+          rant = rants[rants.findIndex(rant => rant.attached_image == '')];
+        }
         let randomRant = (rant.text + ' ... by ' + rant.user_username);
         let speechOutput = GET_RANT_MESSAGE + randomRant;
-        if (rant.attached_image == '') {
-          this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomRant);
-        } else {
-          speechOutput += ' ... See the attached image.';
-          let imageObj = {
-            smallImageUrl: rant.attached_image.url,
-            largeImageUrl: rant.attached_image.url
-          };
-          this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomRant, imageObj);
-        }
+        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomRant);
+      })
+      .catch(function () {
+        this.emit(':tell', ERROR_MESSAGE);
       })
   },
   'AMAZON.HelpIntent': function () {
