@@ -2,6 +2,8 @@ GetNewRantIntent rant
 GetNewRantIntent a rant
 GetNewRantIntent top rant
 GetNewRantIntent a top rant
+GetNewRantIntent give a rant
+GetNewRantIntent tell a rant
 GetNewRantIntent tell me a rant
 GetNewRantIntent give me a rant
 GetNewRantIntent tell me a top rant

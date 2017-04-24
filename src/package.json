@@ -1,6 +1,6 @@
 {
   "name": "devrant-alexa",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Unofficial devRant Alexa Skill",
   "main": "index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 const devRant = require('rantscript');
 const Alexa = require('alexa-sdk');
 
-const APP_ID = undefined;
+const APP_ID = 'amzn1.ask.skill.a0212b5e-a5ed-4fee-833a-9aa6e6034bb0';
 const SKILL_NAME = 'devRant';
 const GET_RANT_MESSAGE = 'Here\'s your rant: ';
 const HELP_MESSAGE = 'You can say tell me a rant, or, you can say exit ... What can I help you with?';
@@ -61,7 +61,7 @@ const handlers = {
 
 exports.handler = (event, context) => {
   const alexa = Alexa.handler(event, context);
-  alexa.APP_ID = APP_ID;
+  alexa.appId = APP_ID;
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
