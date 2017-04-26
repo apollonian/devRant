@@ -1,7 +1,10 @@
+// Init
 const devRant = require('rantscript');
 const Alexa = require('alexa-sdk');
 
-const APP_ID = 'amzn1.ask.skill.a0212b5e-a5ed-4fee-833a-9aa6e6034bb0';
+// SKill messages and prompts i.e. Response Objects
+// TODO: Replace undefined with the Skill's Id
+const APP_ID = undefined;
 const SKILL_NAME = 'devRant';
 const GET_RANT_MESSAGE = 'Here\'s your rant: ';
 const HELP_MESSAGE = 'You can say tell me a rant, or, you can say exit ... What can I help you with?';
@@ -11,10 +14,12 @@ const UNHANDLED_REPROMPT = 'Try saying it again.';
 const STOP_MESSAGE = 'Goodbye!';
 const ERROR_MESSAGE = 'Oops, Error 418 ... Try again'
 
+// Generate a random number within range
 let getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Event Handlers
 const handlers = {
   'LaunchRequest': function () {
     this.emit('GetRant');
@@ -24,7 +29,7 @@ const handlers = {
   },
   'GetRant': function () {
     devRant
-      .rants('top', 24, getRandomInt(4, 2048))
+      .rants('top', 24, getRandomInt(0, 2048))
       .then((rants) => {
         let rant = rants[0];
         if (rant.attached_image != '') {
@@ -59,7 +64,7 @@ const handlers = {
   }
 };
 
-exports.handler = (event, context) => {
+exports.handler = (event, context, callback) => {
   const alexa = Alexa.handler(event, context);
   alexa.appId = APP_ID;
   alexa.registerHandlers(handlers);
